@@ -1,1 +1,36 @@
-[{"file_name": "new_yorker.2021.02.22", "mag_name": "\u7ebd\u7ea6\u5ba2", "pub_date": 20210222, "formats": ["pdf", "epub"]}, {"file_name": "TheEconomist.2021.02.20", "mag_name": "\u7ecf\u6d4e\u5b66\u4eba", "cover_name": "cover.jpeg", "pub_date": 20210220, "formats": ["pdf", "epub"]}, {"file_name": "new_yorker.2021.02.15", "mag_name": "\u7ebd\u7ea6\u5ba2", "pub_date": 20210215, "formats": ["pdf", "epub"]}]
+[
+  {
+    "title": "new_yorker.2021.02.22",
+    "mag_name": "纽约客",
+    "download_url": "https://gitee.com/corbertismaaeel/magazines/raw/master/new_yorker/20210222/new_yorker.2021.02.22",
+    "source": "gitee",
+    "formats": [
+      "pdf",
+      "epub"
+    ],
+    "pub_date": 20210222
+  },
+  {
+    "title": "TheEconomist.2021.02.20",
+    "mag_name": "经济学人",
+    "cover": "https://gitee.com/corbertismaaeel/magazines/raw/master/economist/20210220/cover.jpeg",
+    "download_url": "https://gitee.com/corbertismaaeel/magazines/raw/master/economist/20210220/TheEconomist.2021.02.20",
+    "source": "gitee",
+    "formats": [
+      "pdf",
+      "epub"
+    ],
+    "pub_date": 20210220
+  },
+  {
+    "title": "new_yorker.2021.02.15",
+    "mag_name": "纽约客",
+    "download_url": "https://gitee.com/corbertismaaeel/magazines/raw/master/new_yorker/20210215/new_yorker.2021.02.15",
+    "source": "gitee",
+    "formats": [
+      "pdf",
+      "epub"
+    ],
+    "pub_date": 20210215
+  }
+]
