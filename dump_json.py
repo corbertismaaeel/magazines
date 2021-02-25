@@ -6,8 +6,8 @@ import json
 from json import JSONEncoder
 
 
-# RES_BASE_URL = 'https://gitee.com/corbertismaaeel/magazines/raw/master/economist/20210220/cover.jpeg'
-RES_BASE_URL = 'https://gitee.com/corbertismaaeel/magazines/raw/master/{}/{}/{}'
+# RES_BASE_URL = https://raw.githubusercontent.com/hehonghui/the-economist-ebooks/master/01_economist/te_2021.02.20/TheEconomist.2021.02.20.epub
+RES_BASE_URL = 'https://raw.githubusercontent.com/corbertismaaeel/magazines/master/{}/{}/{}'
 
 
 class MagazineIssue(object):
@@ -17,7 +17,7 @@ class MagazineIssue(object):
     pub_date = 0
     cover = ""
     formats = None
-    source = 'gitee'
+    source = 'github'
     download_url = ''
 
     def __init__(self, name, p_date, formats):
@@ -70,7 +70,7 @@ def process_mag_issue(mag, pub_date, issue_dir):
         mag_dir = mag.get('dir')
         mag_name = mag.get('name')
         mag_issue = MagazineIssue(mag_name, int(pub_date), formats=[])
-        mag_issue.source = 'gitee'
+        mag_issue.source = 'github'
         book_files = os.listdir(issue_dir)
         for f in book_files:
             if f.lower().endswith(".epub"):
