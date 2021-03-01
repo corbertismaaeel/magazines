@@ -1,0 +1,11 @@
+--2021-03-01 14:16:29--  https://emagazines.site/cover/315
+Resolving emagazines.site (emagazines.site)... 47.242.80.234
+Connecting to emagazines.site (emagazines.site)|47.242.80.234|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 33197 (32K) [image/jpeg]
+Saving to: ‘315’
+
+     0K .......... .......... .......... ..                   100%  169M=0s
+
+2021-03-01 14:16:29 (169 MB/s) - ‘315’ saved [33197/33197]
+
