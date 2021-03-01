@@ -40,7 +40,7 @@ class MagEncoder(JSONEncoder):
 
 def main(root_dir):
     print('repo dir : ' + root_dir)
-    magazines = [{'dir': 'economist', 'name': "经济学人"}, {'dir': 'new_yorker', 'name': "纽约客"}]
+    magazines = [{'dir': 'economist', 'name': "经济学人"}, {'dir': 'new_yorker', 'name': "纽约客"}, {'dir': 'nature', 'name': "自然"}, {'dir': 'the_atlantic', 'name': "大西洋月刊"},{'dir': 'wired', 'name': "连线"}, {'dir': 'guardian', 'name': "卫报"}]
     all_mag_issues = []
     for mag in magazines:
         mag_dir = root_dir + os.path.sep + mag.get('dir')
