@@ -40,7 +40,7 @@ class MagEncoder(JSONEncoder):
 
 def main(root_dir):
     print('repo dir : ' + root_dir)
-    magazines = [{'dir': 'economist', 'name': "经济学人"}, {'dir': 'new_yorker', 'name': "纽约客"}, {'dir': 'nature', 'name': "自然"}, {'dir': 'the_atlantic', 'name': "大西洋月刊"},{'dir': 'wired', 'name': "连线"}, {'dir': 'guardian', 'name': "卫报"}]
+    magazines = [{'dir': 'economist', 'name': "经济学人", 'prefix': 'TheEconomist'}, {'dir': 'new_yorker', 'name': "纽约客", 'prefix': 'new_yorker'}, {'dir': 'nature', 'name': "自然", 'prefix': 'nature'}, {'dir': 'the_atlantic', 'name': "大西洋月刊", 'prefix': 'atlantic'},{'dir': 'wired', 'name': "连线", 'prefix': 'wired'}, {'dir': 'guardian', 'name': "卫报", 'prefix':'guardian'}]
     all_mag_issues = []
     for mag in magazines:
         mag_dir = root_dir + os.path.sep + mag.get('dir')
@@ -85,6 +85,9 @@ def process_mag_issue(mag, pub_date, issue_dir):
 
             if f.lower() == "cover.jpg" or f.lower() == "cover.jpeg" or f.lower() == "cover.png":
                 mag_issue.cover = RES_BASE_URL.format(mag_dir, pub_date, f)
+            prefix = mag.get('prefix')
+            if prefix is not None:
+                mag_issue.title = mag_issue.title.replace(prefix, mag_name)
         return mag_issue
     except Exception as e:
         print("process_mag_issue error " + str(e))
