@@ -17,7 +17,7 @@ class MagazineIssue(object):
     pub_date = 0
     cover = ""
     formats = None
-    source = 'github'
+    source = ''
     download_url = ''
 
     def __init__(self, name, p_date, formats):
@@ -70,7 +70,7 @@ def process_mag_issue(mag, pub_date, issue_dir):
         mag_dir = mag.get('dir')
         mag_name = mag.get('name')
         mag_issue = MagazineIssue(mag_name, int(pub_date), formats=[])
-        mag_issue.source = 'github'
+        mag_issue.source = 'Magazine'
         book_files = os.listdir(issue_dir)
         for f in book_files:
             if f.lower().endswith(".epub"):
