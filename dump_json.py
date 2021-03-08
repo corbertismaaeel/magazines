@@ -19,6 +19,8 @@ class MagazineIssue(object):
     formats = None
     source = ''
     download_url = ''
+    file_size = 0
+    file_size_mb = 0
 
     def __init__(self, name, p_date, formats):
         self.mag_name = name
@@ -65,6 +67,13 @@ def dump_json(root_dir, all_mag_issues):
             jfile.write(json_content)
 
 
+def get_file_size_MB(filePath):
+    filePath = unicode(filePath,'utf8')
+    fsize = os.path.getsize(filePath)
+    fsize = fsize/float(1024*1024)
+    return round(fsize,2)
+
+
 def process_mag_issue(mag, pub_date, issue_dir):
     try:
         mag_dir = mag.get('dir')
@@ -77,6 +86,9 @@ def process_mag_issue(mag, pub_date, issue_dir):
                 mag_issue.add_format("epub")
                 mag_issue.title = os.path.splitext(f)[0]
                 mag_issue.download_url = RES_BASE_URL.format(mag_dir, pub_date, mag_issue.title)
+                filePath = issue_dir + os.path.sep + f
+                mag_issue.file_size_mb = get_file_size_MB(filePath)
+                mag_issue.file_size = os.path.getsize(filePath)
 
             if f.lower().endswith(".pdf"):
                 mag_issue.add_format("pdf")
